@@ -71,7 +71,7 @@ function main(){
     $pass='123456';          //对应的密码
      //初始化一个PDO对象
     $dbh = new PDO('mysql:host=localhost;dbname=mybox', $user, $pass,array(PDO::ATTR_PERSISTENT => true));
-    echo "连接成功<br/>";
+    #echo "连接成功<br/>";
     #$dbh = null;
     }catch (PDOException $e) {
     die ("Error!: " . $e->getMessage() . "<br/>");
@@ -94,22 +94,28 @@ function main(){
     }
 }
 main();
+
 ?>
 
 
-<form method="post" action="add()">
-<!-- id: <input type="text" name="age">
-名字: <input type="text" name="fname">
+<form method="post" action="add.php">
+id: <input type="text" name="id">
+名字: <input type="text" name="name">
 年龄: <input type="text" name="age">
-工资: <input type="text" name="age"> -->
+工资: <input type="text" name="salaery">
 <input type="submit" value="添加">
 </form>
 
 <form method="post" action="update.php">
+id: <input type="text" name="id">
+名字: <input type="text" name="name">
+<!-- 年龄: <input type="text" name="age">
+工资: <input type="text" name="salaery"> -->
 <input type="submit" value="修改">
 </form>
 
 <form method="post" action="delete.php">
+id: <input type="text" name="id">
 <input type="submit" value="删除">
 </form>
 

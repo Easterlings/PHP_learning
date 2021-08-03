@@ -18,7 +18,9 @@ try {
 
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
     $dbh->beginTransaction();
-    $dbh->exec("update employee set name = 'jack' where id = 5");
+    $id = $_POST["id"];
+    $name = $_POST["name"];
+    $dbh->exec("update employee set name = '$name' where id = ".$id);
     $dbh->commit();
     echo "修改成功<br/>";
     

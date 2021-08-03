@@ -18,7 +18,8 @@ try {
 
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
     $dbh->beginTransaction();
-    $dbh->exec("delete from employee where id = 5");
+    $id = $_POST['id'];
+    $dbh->exec("delete from employee where id = $id");
     $dbh->commit();
     echo "删除成功<br/>";
     
